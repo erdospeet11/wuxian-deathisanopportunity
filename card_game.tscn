@@ -1,0 +1,132 @@
+[gd_scene load_steps=3 format=3 uid="uid://7mqpjbt8ww3b"]
+
+[ext_resource type="Script" uid="uid://co0japujyx44q" path="res://card.gd" id="1_card"]
+[ext_resource type="Script" uid="uid://3huixkfcmayn" path="res://card_slot.gd" id="2_slot"]
+
+[node name="CardGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.2, 0.25, 1)
+
+[node name="SlotContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -60.0
+offset_right = 250.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="CardSlot1" type="Control" parent="SlotContainer"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("2_slot")
+
+[node name="CardSlot2" type="Control" parent="SlotContainer"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("2_slot")
+
+[node name="CardSlot3" type="Control" parent="SlotContainer"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("2_slot")
+
+[node name="CardSlot4" type="Control" parent="SlotContainer"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("2_slot")
+
+[node name="CardSlot5" type="Control" parent="SlotContainer"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("2_slot")
+
+[node name="CardHand" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 15
+
+[node name="Card1" type="Control" parent="CardHand"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("1_card")
+card_name = "Fire"
+card_color = Color(0.9, 0.2, 0.2, 1)
+
+[node name="Card2" type="Control" parent="CardHand"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("1_card")
+card_name = "Water"
+card_color = Color(0.2, 0.4, 0.9, 1)
+
+[node name="Card3" type="Control" parent="CardHand"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("1_card")
+card_name = "Earth"
+card_color = Color(0.4, 0.6, 0.2, 1)
+
+[node name="Card4" type="Control" parent="CardHand"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("1_card")
+card_name = "Wind"
+card_color = Color(0.7, 0.9, 0.9, 1)
+
+[node name="Card5" type="Control" parent="CardHand"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+script = ExtResource("1_card")
+card_name = "Lightning"
+card_color = Color(0.9, 0.9, 0.2, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Shape your vessel anew, Lethal Realm Shaper Sovereign"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -62.0
+offset_right = 302.0
+grow_vertical = 0
+text = "Back"

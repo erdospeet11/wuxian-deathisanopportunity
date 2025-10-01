@@ -27,12 +27,22 @@ You run around fighting, collecting stuff. Upon death you can cultivate, shape a
 
 
 - Map
-
+	- [ ] Mountain
+	- [ ] Village
+	- [ ] Temple
+	- [ ] Castle
 - Player
-	- Combat System
+	- [ ] Combat System
+	- [ ] Movement
+		- [ ] 
+	- [ ] Ability
+		- [X] Jump
+		- [ ] dash
+		- [ ] glide
 - Enemy
 - Gameplay Systems
-	- Cultivation System
-	- Spawning System
-	- Cult System
-	- Item System
+	- [ ] Cultivation System
+	- [ ] Spawning System
+	- [ ] Cult System
+		- [ ] Cards
+	- [ ] Item System

@@ -1,16 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg0vc7kgvo5np"]
+[gd_scene load_steps=8 format=3 uid="uid://dg0vc7kgvo5np"]
+
+[ext_resource type="PackedScene" uid="uid://bt0foktnsdqjm" path="res://player.tscn" id="1_c7s6e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7s6e"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wijl4"]
+sky_material = SubResource("ProceduralSkyMaterial_c7s6e")
+
+[sub_resource type="Environment" id="Environment_e0an3"]
+background_mode = 2
+sky = SubResource("Sky_wijl4")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6lj2"]
 albedo_color = Color(0.11119685, 0.11119684, 0.11119684, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_c7s6e"]
 material = SubResource("StandardMaterial3D_e6lj2")
-size = Vector2(30, 30)
+size = Vector2(300, 300)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_e6lj2"]
-data = PackedVector3Array(15, 0, 15, -15, 0, 15, 15, 0, -15, -15, 0, 15, -15, 0, -15, 15, 0, -15)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c7s6e"]
+data = PackedVector3Array(150, 0, 150, -150, 0, 150, 150, 0, -150, -150, 0, 150, -150, 0, -150, 150, 0, -150)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e0an3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_c7s6e")
@@ -18,4 +40,32 @@ mesh = SubResource("PlaneMesh_c7s6e")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_e6lj2")
+shape = SubResource("ConcavePolygonShape3D_c7s6e")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_c7s6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 10.11496, -85.12819)
+use_collision = true
+size = Vector3(34, 40.22992, 75)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.5, -30.62819)
+use_collision = true
+size = Vector3(34, 25, 34)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 70.04909, 10.11496, -31.12819)
+use_collision = true
+size = Vector3(34, 40.22992, 75)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.58512, 58, -137.12819)
+use_collision = true
+size = Vector3(30.963013, 136, 31)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.645195, 18.48375, -84.7986)
+use_collision = true
+size = Vector3(78.0271, 56.9675, 74.34082)

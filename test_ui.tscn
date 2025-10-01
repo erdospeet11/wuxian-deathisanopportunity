@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://buf88nml1uat2"]
+
+[ext_resource type="Texture2D" uid="uid://cp3ucawogfrnh" path="res://divine-pixel-meditation-stockcake.jpg" id="1_i11ae"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i11ae"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4nob"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tn64"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.037740193, 0.09003622, 0.2019875, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_right = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i11ae")
+
+[node name="Panel4" type="Panel" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 545.0
+offset_top = 26.0
+offset_right = 609.0
+offset_bottom = 90.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i11ae")
+
+[node name="Panel5" type="Panel" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 757.0
+offset_top = 265.0
+offset_right = 821.0
+offset_bottom = 329.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4nob")
+
+[node name="Panel3" type="Panel" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 695.0
+offset_top = 105.0
+offset_right = 759.0
+offset_bottom = 169.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3tn64")
+
+[node name="Panel2" type="Panel" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 421.0
+offset_top = 107.0
+offset_right = 485.0
+offset_bottom = 171.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i11ae")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 310.0
+offset_top = 269.0
+offset_right = 374.0
+offset_bottom = 333.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i11ae")
