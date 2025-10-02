@@ -1,29 +1,31 @@
 [gd_scene load_steps=5 format=3 uid="uid://bt0foktnsdqjm"]
 
 [ext_resource type="Script" uid="uid://d0e03ek2lohr" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://3qufrmjjfohn" path="res://low-poly-sekiro/source/Sekiro_ 2_8.fbx" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://7mqpjbt8ww3b" path="res://card_game.tscn" id="2_onrkg"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+height = 3.5996094
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_4flbx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_sh265")
+[node name="Sekiro_ 2_8" parent="." instance=ExtResource("2_i3pqv")]
+transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0, -1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77801394, 0)
 shape = SubResource("CapsuleShape3D_4flbx")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-spring_length = 4.0
+spring_length = 8.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
 [node name="DebugConsole" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DebugConsole"]
 offset_right = 243.0
@@ -42,5 +44,6 @@ layout_mode = 2
 text = "Spawn Enemy"
 
 [node name="Cultivation" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="CardGame" parent="Cultivation" instance=ExtResource("2_onrkg")]

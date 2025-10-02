@@ -33,12 +33,17 @@ You run around fighting, collecting stuff. Upon death you can cultivate, shape a
 	- [ ] Castle
 - Player
 	- [ ] Combat System
+		- [ ] lightning strike: strike enemy with biggest health when clicked
+		- [ ] flying sword slash: it a slash travelling the way you are facing
+		- [ ] fan: release close range wind into all direction
+		- [ ] qi energy orb: it is an orb that jumps around enemies
 	- [ ] Movement
 		- [ ] 
 	- [ ] Ability
 		- [X] Jump
 		- [ ] dash
 		- [ ] glide
+		- [ ] wall glide
 - Enemy
 - Gameplay Systems
 	- [ ] Cultivation System

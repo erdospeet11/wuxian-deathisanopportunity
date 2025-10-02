@@ -1,13 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg0vc7kgvo5np"]
+[gd_scene load_steps=10 format=3 uid="uid://dg0vc7kgvo5np"]
 
 [ext_resource type="PackedScene" uid="uid://bt0foktnsdqjm" path="res://player.tscn" id="1_c7s6e"]
+[ext_resource type="PackedScene" uid="uid://bf7narjmewe50" path="res://low_poly_chinese_merchant_characters_npc.glb" id="2_wijl4"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7s6e"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wijl4"]
+sky_top_color = Color(0.11509644, 0.47636658, 0.69543266, 1)
 
 [sub_resource type="Sky" id="Sky_wijl4"]
-sky_material = SubResource("ProceduralSkyMaterial_c7s6e")
+sky_material = SubResource("ProceduralSkyMaterial_wijl4")
 
 [sub_resource type="Environment" id="Environment_e0an3"]
 background_mode = 2
@@ -24,6 +24,8 @@ size = Vector2(300, 300)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c7s6e"]
 data = PackedVector3Array(150, 0, 150, -150, 0, 150, 150, 0, -150, -150, 0, 150, -150, 0, -150, 150, 0, -150)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c7s6e"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -69,3 +71,10 @@ size = Vector3(30.963013, 136, 31)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.645195, 18.48375, -84.7986)
 use_collision = true
 size = Vector3(78.0271, 56.9675, 74.34082)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7814412, -4.7946005)
+mesh = SubResource("BoxMesh_c7s6e")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_wijl4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12.67731, 0.066785015, -2.8125362)
