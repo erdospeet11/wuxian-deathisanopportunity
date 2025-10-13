@@ -36,6 +36,7 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("debug"):
 		debug_console.visible = !debug_console.visible
+	print(velocity)
 
 func _physics_process(delta: float) -> void:
 	# Apply camera rotation to SpringArm only (not the whole character body)
@@ -51,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("right", "left", "backward", "forward")
 	# Get camera's forward direction for movement relative to camera
 	var cam_forward = -spring_arm.global_transform.basis.z
-	var cam_right = spring_arm.global_transform.basis.x
+	var cam_right = -spring_arm.global_transform.basis.x
 	cam_forward.y = 0
 	cam_right.y = 0
 	cam_forward = cam_forward.normalized()
@@ -63,7 +64,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		# Rotate mesh to face movement direction
-		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(-direction.x, -direction.z), 10.0 * delta)
+		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(-direction.x, direction.z), 10.0 * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

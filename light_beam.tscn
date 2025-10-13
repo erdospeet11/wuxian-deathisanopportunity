@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://e1vkbh5cxkrr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmbm1"]
+transparency = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r5262"]
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_crlx4"]
+
+[node name="LightBeam" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_bmbm1")
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_r5262")
+draw_pass_1 = SubResource("QuadMesh_crlx4")
