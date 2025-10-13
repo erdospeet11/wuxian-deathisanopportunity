@@ -1,8 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
-const SPEED = 7.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 10.0
+const JUMP_VELOCITY = 4.5 * 2
 
 const MOUSE_SENSITIVITY = 0.001
 const CAMERA_X_ROT_MIN = -60
@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	var input_dir := Input.get_vector("right", "left", "backward", "forward")
+	var input_dir := Input.get_vector("left", "right", "backward", "forward")
 	# Get camera's forward direction for movement relative to camera
 	var cam_forward = -spring_arm.global_transform.basis.z
 	var cam_right = -spring_arm.global_transform.basis.x
