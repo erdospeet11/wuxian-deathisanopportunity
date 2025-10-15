@@ -1,0 +1,18 @@
+[gd_resource type="Item" script_class="Item" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://item.gd" id="1_0"]
+
+[resource]
+script = ExtResource("1_0")
+item_name = "Spiritual Essence Pill"
+description = "A refined pill containing concentrated spiritual energy. Consuming this pill aids in cultivation and strengthens the soul's connection to the spiritual realm."
+rarity = 2
+item_type = 0
+value = 150
+stackable = true
+max_stack_size = 10
+spiritual_essence = 25
+cultivation_realm = 0
+elemental_affinity = 0
+use_effect = "Grants +25 Spiritual Essence. Suitable for Foundation realm cultivators."
+cooldown_time = 30.0

@@ -1,0 +1,18 @@
+[gd_resource type="Item" script_class="Item" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://item.gd" id="1_0"]
+
+[resource]
+script = ExtResource("1_0")
+item_name = "Lightning Protection Talisman"
+description = "An ancient talisman inscribed with lightning ward runes. Provides protection against electric attacks and enhances lightning-based cultivation techniques."
+rarity = 3
+item_type = 5
+value = 500
+stackable = false
+max_stack_size = 1
+spiritual_essence = 0
+cultivation_realm = 2
+elemental_affinity = 5
+use_effect = "Equip to gain +15% resistance to lightning damage and +10% bonus to lightning cultivation speed."
+cooldown_time = 0.0
