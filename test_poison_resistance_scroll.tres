@@ -1,0 +1,18 @@
+[gd_resource type="Item" script_class="Item" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://item.gd" id="1_0"]
+
+[resource]
+script = ExtResource("1_0")
+item_name = "Poison Resistance Technique Scroll"
+description = "A scroll containing the secret technique of 'Toxic Immunity Meditation'. Learning this technique allows the cultivator to resist poison effects and eventually gain immunity through repeated exposure."
+rarity = 4
+item_type = 4
+value = 1200
+stackable = false
+max_stack_size = 1
+spiritual_essence = 50
+cultivation_realm = 3
+elemental_affinity = 6
+use_effect = "Learn the Poison Resistance technique. Once learned, gradually build immunity to poison through exposure. Each death from poison brings you closer to mastery."
+cooldown_time = 0.0
